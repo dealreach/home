@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Partner with Us | DealReach India</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    :root{
+      --brand-red:#E63946;
+      --brand-dark:#1D3557;
+      --brand-light:#F1FAEE;
+      --brand-accent:#457B9D;
+      --white:#ffffff;
+      --gray:#6b7280;
+      --border:#dfe5e1;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:var(--brand-light);
+      color:var(--brand-dark);
+      line-height:1.8;
+    }
+
+    .container{
+      width:100%;
+      max-width:1100px;
+      margin:auto;
+      padding:60px 24px;
+    }
+
+    .topbar{
+      margin-bottom:60px;
+    }
+
+    .brand{
+      text-decoration:none;
+      color:var(--brand-red);
+      font-family:'Playfair Display',serif;
+      font-size:38px;
+      font-weight:700;
+    }
+
+    .eyebrow{
+      margin-top:24px;
+      font-size:12px;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      color:var(--brand-accent);
+      font-weight:800;
+    }
+
+    h1{
+      font-family:'Playfair Display',serif;
+      font-size:68px;
+      line-height:1;
+      font-weight:400;
+      margin-top:18px;
+      max-width:850px;
+    }
+
+    @media(max-width:768px){
+      h1{
+        font-size:42px;
+      }
+    }
+
+    .hero-text{
+      margin-top:28px;
+      font-size:20px;
+      color:var(--gray);
+      max-width:800px;
+      line-height:1.9;
+    }
+
+    .content{
+      display:grid;
+      grid-template-columns:1.2fr 0.8fr;
+      gap:40px;
+      margin-top:60px;
+    }
+
+    @media(max-width:900px){
+      .content{
+        grid-template-columns:1fr;
+      }
+    }
+
+    .card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:28px;
+      padding:42px;
+    }
+
+    @media(max-width:768px){
+      .card{
+        padding:30px 24px;
+      }
+    }
+
+    h2{
+      font-size:34px;
+      margin-bottom:22px;
+      line-height:1.2;
+    }
+
+    p{
+      margin-bottom:18px;
+      color:#374151;
+      font-size:17px;
+    }
+
+    ul{
+      padding-left:22px;
+      margin-top:18px;
+      margin-bottom:10px;
+    }
+
+    li{
+      margin-bottom:14px;
+      color:#374151;
+    }
+
+    .highlight{
+      background:rgba(230,57,70,0.08);
+      border-left:4px solid var(--brand-red);
+      padding:20px;
+      border-radius:14px;
+      margin:28px 0;
+    }
+
+    .contact-box{
+      background:var(--brand-dark);
+      color:#fff;
+      border-radius:28px;
+      padding:42px;
+      position:sticky;
+      top:30px;
+      overflow:hidden;
+    }
+
+    .contact-box::before{
+      content:'';
+      position:absolute;
+      top:-50px;
+      right:-50px;
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.04);
+    }
+
+    .contact-title{
+      font-size:36px;
+      line-height:1.2;
+      margin-bottom:20px;
+      position:relative;
+      z-index:2;
+    }
+
+    .contact-text{
+      color:rgba(255,255,255,0.75);
+      margin-bottom:34px;
+      position:relative;
+      z-index:2;
+    }
+
+    .info{
+      margin-bottom:24px;
+      position:relative;
+      z-index:2;
+    }
+
+    .label{
+      font-size:12px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      color:#A8DADC;
+      font-weight:800;
+      margin-bottom:8px;
+    }
+
+    .value{
+      font-size:18px;
+      font-weight:600;
+      word-break:break-word;
+    }
+
+    .value a{
+      color:#fff;
+      text-decoration:none;
+    }
+
+    .value a:hover{
+      text-decoration:underline;
+    }
+
+    .cta-btn{
+      display:inline-block;
+      margin-top:18px;
+      background:var(--brand-red);
+      color:#fff;
+      padding:16px 28px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:700;
+      transition:0.3s ease;
+      position:relative;
+      z-index:2;
+    }
+
+    .cta-btn:hover{
+      transform:translateY(-2px);
+      background:#d62839;
+    }
+
+    .features{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:20px;
+      margin-top:40px;
+    }
+
+    @media(max-width:768px){
+      .features{
+        grid-template-columns:1fr;
+      }
+    }
+
+    .feature{
+      border:1px solid var(--border);
+      padding:24px;
+      border-radius:20px;
+      background:#fafafa;
+    }
+
+    .feature-title{
+      font-size:20px;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+
+    .feature-text{
+      color:#4b5563;
+      font-size:15px;
+      line-height:1.8;
+    }
+
+    footer{
+      margin-top:60px;
+      text-align:center;
+      color:var(--gray);
+      font-size:14px;
+      padding-bottom:30px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="topbar">
+
+      <a href="/" class="brand">
+        DealReach.in
+      </a>
+
+      <div class="eyebrow">
+        Collaborations & Brand Partnerships
+      </div>
+
+      <h1>
+        Let's Grow Together Through Smart Commerce.
+      </h1>
+
+      <p class="hero-text">
+        DealReach India helps brands, sellers, creators, and affiliate partners reach highly engaged deal-seeking audiences through curated promotions, campaigns, and strategic visibility.
+      </p>
+
+    </div>
+
+    <div class="content">
+
+      <!-- Left Side -->
+      <div class="card">
+
+        <h2>
+          Why Partner With DealReach India?
+        </h2>
+
+        <p>
+          We focus on connecting shoppers with valuable deals, discounts, trending products, and high-conversion offers across multiple categories.
+        </p>
+
+        <p>
+          Whether you're a brand, online seller, affiliate network, creator, or marketplace partner — we help amplify visibility and improve audience reach.
+        </p>
+
+        <div class="highlight">
+          We prioritize high-quality offers, trusted partnerships, and audience-first recommendations.
+        </div>
+
+        <h2>
+          Partnership Opportunities
+        </h2>
+
+        <ul>
+          <li>Affiliate Partnerships</li>
+          <li>Sponsored Promotions</li>
+          <li>Brand Collaborations</li>
+          <li>Product Launch Campaigns</li>
+          <li>Marketplace Promotions</li>
+          <li>Social Media Promotions</li>
+          <li>WhatsApp Channel Promotions</li>
+          <li>Seasonal Campaign Features</li>
+        </ul>
+
+        <div class="features">
+
+          <div class="feature">
+            <div class="feature-title">
+              Audience Reach
+            </div>
+
+            <div class="feature-text">
+              Reach highly active online shoppers actively searching for deals, discounts, and trending offers.
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature-title">
+              Curated Exposure
+            </div>
+
+            <div class="feature-text">
+              Featured placements designed to maximize visibility and engagement across platforms.
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature-title">
+              Multi-Platform Presence
+            </div>
+
+            <div class="feature-text">
+              Promotions distributed through website content, Facebook, WhatsApp channels, and future expansion platforms.
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature-title">
+              Long-Term Collaboration
+            </div>
+
+            <div class="feature-text">
+              We value sustainable partnerships focused on audience trust and conversion quality.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Right Side -->
+      <div class="contact-box">
+
+        <div class="contact-title">
+          Start a Partnership
+        </div>
+
+        <div class="contact-text">
+          Interested in collaborating with DealReach India?
+          Reach out with your proposal, campaign details, or partnership inquiry.
+        </div>
+
+        <div class="info">
+          <div class="label">
+            Email
+          </div>
+
+          <div class="value">
+            <a href="mailto:[EMAIL]">
+              [EMAIL]
+            </a>
+          </div>
+        </div>
+
+        <div class="info">
+          <div class="label">
+            Website
+          </div>
+
+          <div class="value">
+            <a href="https://dealreach.in">
+              dealreach.in
+            </a>
+          </div>
+        </div>
+
+        <div class="info">
+          <div class="label">
+            Facebook
+          </div>
+
+          <div class="value">
+            <a href="https://facebook.com/DealReachIndia" target="_blank">
+              facebook.com/DealReachIndia
+            </a>
+          </div>
+        </div>
+
+        <a
+          href="mailto:[EMAIL]?subject=Partnership Inquiry - DealReach India"
+          class="cta-btn"
+        >
+          Contact Us
+        </a>
+
+      </div>
+
+    </div>
+
+    <footer>
+      © <span id="year"></span> DealReach India. All Rights Reserved.
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
