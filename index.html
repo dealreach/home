@@ -281,6 +281,67 @@
       margin-top:60px;
     }
 
+/* Social Connect Section */
+
+.social-connect{
+  padding:10px 24px 50px;
+}
+
+.social-connect-inner{
+  max-width:1280px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:24px;
+}
+
+.social-title{
+  font-size:14px;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-weight:800;
+  color:var(--brand-accent);
+}
+
+.social-icons{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:28px;
+  flex-wrap:wrap;
+}
+
+.social-icons a{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:#fff;
+  border:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:0.3s ease;
+  box-shadow:0 4px 18px rgba(0,0,0,0.05);
+}
+
+.social-icons a:hover{
+  transform:translateY(-4px) scale(1.08);
+  box-shadow:var(--shadow);
+}
+
+.social-icons svg{
+  width:26px;
+  height:26px;
+  fill:var(--brand-dark);
+  transition:0.3s ease;
+}
+
+.social-icons a:hover svg{
+  fill:var(--brand-red);
+}
+
     .footer-inner{
       max-width:1280px;
       margin:auto;
@@ -423,7 +484,7 @@
         <div class="status-box">
 
           <div class="status-title">
-            ✓ Active Member
+            Join Our FREE Inner Circle Community
           </div>
 
           <div class="status-text">
@@ -448,6 +509,67 @@
 
     </div>
   </main>
+
+<!-- Social Connect -->
+<section class="social-connect">
+
+  <div class="social-connect-inner">
+
+    <div class="social-title">
+      Connect with DealReach India
+    </div>
+
+    <div class="social-icons">
+
+      <!-- Instagram -->
+      <a
+        href="https://www.instagram.com/dealreachindia/"
+        target="_blank"
+        aria-label="Instagram"
+      >
+        <svg viewBox="0 0 24 24">
+          <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm0 2h10c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3zm11.5 1a1.5 1.5 0 100 3 1.5 1.5 0 000-3zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z"/>
+        </svg>
+      </a>
+
+      <!-- Facebook -->
+      <a
+        href="https://www.facebook.com/DealReachIndia/"
+        target="_blank"
+        aria-label="Facebook"
+      >
+        <svg viewBox="0 0 24 24">
+          <path d="M13 22v-8h3l1-4h-4V8c0-1.2.3-2 2-2h2V2.3C16.6 2.1 15.5 2 14.3 2 11.6 2 10 3.7 10 6.7V10H7v4h3v8h3z"/>
+        </svg>
+      </a>
+
+      <!-- YouTube -->
+      <a
+        href="https://www.youtube.com/@DealReachin"
+        target="_blank"
+        aria-label="YouTube"
+      >
+        <svg viewBox="0 0 24 24">
+          <path d="M23.5 6.2s-.2-1.7-.9-2.4c-.9-.9-1.9-.9-2.4-1C16.8 2.5 12 2.5 12 2.5h0s-4.8 0-8.2.3c-.5.1-1.5.1-2.4 1C.7 4.5.5 6.2.5 6.2S0 8.1 0 10v2c0 1.9.5 3.8.5 3.8s.2 1.7.9 2.4c.9.9 2 .9 2.5 1 1.8.2 7.6.3 7.6.3s4.8 0 8.2-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.4.9-2.4S24 13.9 24 12v-2c0-1.9-.5-3.8-.5-3.8zM9.5 15.5v-7l6.5 3.5-6.5 3.5z"/>
+        </svg>
+      </a>
+
+      <!-- Pinterest -->
+      <a
+        href="https://www.pinterest.com/dealreachindia/"
+        target="_blank"
+        aria-label="Pinterest"
+      >
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.5 2 3 5.6 3 10.2c0 2.8 1.5 5.3 3.8 6.2.1-.5.2-1.3.1-1.8-.1-.5-.7-2.9-.7-2.9s-.2-.5-.2-1.1c0-1 .6-1.8 1.4-1.8.7 0 1 .5 1 1.2 0 .8-.5 1.9-.7 2.9-.2.8.4 1.5 1.2 1.5 1.4 0 2.5-1.5 2.5-3.6 0-1.9-1.4-3.2-3.4-3.2-2.3 0-3.7 1.7-3.7 3.5 0 .7.3 1.5.7 1.9.1.1.1.2.1.4-.1.4-.2 1.1-.3 1.2-.1.2-.2.3-.5.2-1.4-.6-2.3-2.4-2.3-4 0-3.2 2.4-6.2 6.9-6.2 3.6 0 6.4 2.6 6.4 6 0 3.6-2.2 6.5-5.3 6.5-1 0-2-.5-2.3-1.1l-.6 2.3c-.2.8-.7 1.8-1.1 2.4.8.2 1.6.4 2.5.4 5.5 0 9-3.6 9-8.2C21 5.6 17.5 2 12 2z"/>
+        </svg>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
 
   <!-- Footer -->
   <footer>
