@@ -1,693 +1,1230 @@
-  <style>
-  </style><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DealReach India - Curated Shopping Savings</title>
-  <link rel="icon" href="/dealreachindia.ico" />
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&family=Noto+Sans+Bengali:wght@400;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>DealReach India</title>
+<link rel="icon" href="/dealreachindia.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
-  *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+
+  --gold:#C89B3C;
+  --gold-dark:#8B5E1A;
+
+  --bg:#F8F4EC;
+  --bg-soft:#FFFDF8;
+
+  --text:#35271A;
+  --text-soft:#6B5A48;
+
+  --border:rgba(200,155,60,0.14);
+
+  --shadow:
+  0 20px 50px rgba(50,30,10,0.08);
+
+  --gold-gradient:
+  linear-gradient(
+    135deg,
+    #F7E7BE 0%,
+    #D6B36A 35%,
+    #B8862F 65%,
+    #F3E0B5 100%
+  );
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  font-family:'Inter',sans-serif;
+
+  background:
+  radial-gradient(
+    circle at top,
+    #FFF8EA 0%,
+    #F8F4EC 45%,
+    #F3EBDD 100%
+  );
+
+  color:var(--text);
+
+  overflow-x:hidden;
+}
+
+/* SOFT GLOW */
+
+body::before{
+
+  content:'';
+
+  position:fixed;
+
+  width:700px;
+  height:700px;
+
+  top:-260px;
+  right:-160px;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(200,155,60,0.10),
+    transparent 70%
+  );
+
+  z-index:-1;
+
+  pointer-events:none;
+}
+
+/* NAVBAR */
+
+.navbar{
+
+  width:100%;
+
+  padding:24px 42px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  position:sticky;
+  top:0;
+
+  z-index:1000;
+
+  backdrop-filter:blur(14px);
+
+  background:rgba(255,255,255,0.62);
+
+  border-bottom:1px solid rgba(200,155,60,0.08);
+}
+
+.logo-wrap{
+
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.logo{
+
+  width:70px;
+  height:70px;
+
+  object-fit:contain;
+}
+
+.brand{
+
+  display:flex;
+  flex-direction:column;
+}
+
+.brand-name{
+
+  font-family:'Playfair Display',serif;
+
+  font-size:28px;
+  font-weight:700;
+
+  background:var(--gold-gradient);
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.brand-tag{
+
+  margin-top:4px;
+
+  font-size:11px;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+
+  color:var(--gold-dark);
+
+  font-weight:700;
+}
+
+.nav-links{
+
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.nav-links a{
+
+  text-decoration:none;
+
+  color:var(--text-soft);
+
+  font-size:14px;
+  font-weight:600;
+
+  transition:0.3s ease;
+}
+
+.nav-links a:hover{
+  color:var(--gold-dark);
+}
+
+.nav-btn{
+
+  background:var(--gold-gradient);
+
+  color:#fff !important;
+
+  padding:13px 22px;
+
+  border-radius:999px;
+
+  box-shadow:
+  0 10px 25px rgba(184,134,47,0.18);
+}
+
+/* HERO */
+
+.hero{
+
+  width:100%;
+  max-width:1320px;
+
+  margin:auto;
+
+  padding:
+  100px 40px
+  120px;
+
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+
+  gap:80px;
+
+  align-items:center;
+}
+
+.hero-eyebrow{
+
+  font-size:12px;
+
+  letter-spacing:3px;
+
+  text-transform:uppercase;
+
+  color:var(--gold-dark);
+
+  font-weight:800;
+
+  margin-bottom:24px;
+}
+
+.hero-title{
+
+  font-family:'Playfair Display',serif;
+
+  font-size:78px;
+
+  line-height:0.96;
+
+  font-weight:600;
+
+  max-width:700px;
+}
+
+.hero-title span{
+
+  background:var(--gold-gradient);
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero-text{
+
+  margin-top:32px;
+
+  max-width:620px;
+
+  font-size:20px;
+
+  line-height:1.9;
+
+  color:var(--text-soft);
+}
+
+.hero-actions{
+
+  margin-top:42px;
+
+  display:flex;
+  gap:18px;
+
+  flex-wrap:wrap;
+}
+
+.btn-primary{
+
+  background:var(--gold-gradient);
+
+  color:#fff;
+
+  text-decoration:none;
+
+  padding:18px 34px;
+
+  border-radius:999px;
+
+  font-weight:700;
+
+  box-shadow:
+  0 18px 32px rgba(184,134,47,0.20);
+
+  transition:0.3s ease;
+}
+
+.btn-primary:hover{
+
+  transform:
+  translateY(-3px)
+  scale(1.03);
+}
+
+.btn-secondary{
+
+  text-decoration:none;
+
+  color:var(--text);
+
+  border:1px solid rgba(200,155,60,0.18);
+
+  background:rgba(255,255,255,0.65);
+
+  padding:18px 32px;
+
+  border-radius:999px;
+
+  font-weight:700;
+
+  transition:0.3s ease;
+}
+
+.btn-secondary:hover{
+
+  background:#fff;
+
+  transform:translateY(-3px);
+}
+
+/* HERO CARDS */
+
+.hero-visual{
+
+  position:relative;
+
+  min-height:580px;
+}
+
+.card{
+
+  position:absolute;
+
+  background:rgba(255,255,255,0.70);
+
+  backdrop-filter:blur(14px);
+
+  border:1px solid var(--border);
+
+  border-radius:28px;
+
+  padding:34px;
+
+  box-shadow:var(--shadow);
+
+  transition:0.35s ease;
+}
+
+.card:hover{
+
+  transform:
+  translateY(-8px)
+  scale(1.02);
+}
+
+.card-label{
+
+  font-size:11px;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+
+  color:var(--gold-dark);
+
+  font-weight:800;
+
+  margin-bottom:18px;
+}
+
+.card-title{
+
+  font-size:24px;
+
+  line-height:1.6;
+
+  font-weight:600;
+}
+
+.card-1{
+
+  width:360px;
+
+  top:0;
+  left:0;
+}
+
+.card-2{
+
+  width:320px;
+
+  right:0;
+  top:160px;
+}
+
+.card-3{
+
+  width:340px;
+
+  bottom:0;
+  left:60px;
+}
+
+/* SECTIONS */
+
+.section{
+
+  width:100%;
+  max-width:1240px;
+
+  margin:auto;
+
+  padding:
+  0 40px
+  110px;
+}
+
+.section-box{
+
+  background:
+  linear-gradient(
+    180deg,
+    rgba(255,255,255,0.72),
+    rgba(255,255,255,0.48)
+  );
+
+  backdrop-filter:blur(14px);
+
+  border:1px solid rgba(200,155,60,0.12);
+
+  border-radius:40px;
+
+  padding:70px;
+
+  box-shadow:var(--shadow);
+}
+
+.section-label{
+
+  font-size:12px;
+
+  letter-spacing:3px;
+
+  text-transform:uppercase;
+
+  color:var(--gold-dark);
+
+  font-weight:800;
+}
+
+.section-title{
+
+  margin-top:20px;
+
+  font-family:'Playfair Display',serif;
+
+  font-size:58px;
+
+  line-height:1.08;
+}
+
+.section-text{
+
+  margin-top:28px;
+
+  max-width:780px;
+
+  font-size:20px;
+
+  line-height:1.9;
+
+  color:var(--text-soft);
+}
+
+/* SIMPLE GRID */
+
+.grid{
+
+  margin-top:50px;
+
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:24px;
+}
+
+.grid-box{
+
+  background:rgba(255,255,255,0.62);
+
+  border:1px solid var(--border);
+
+  border-radius:28px;
+
+  padding:34px;
+
+  box-shadow:var(--shadow);
+}
+
+.grid-number{
+
+  font-family:'Playfair Display',serif;
+
+  font-size:52px;
+
+  background:var(--gold-gradient);
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.grid-text{
+
+  margin-top:18px;
+
+  line-height:1.9;
+
+  color:var(--text-soft);
+}
+
+/* DARK CTA */
+
+.cta{
+
+  background:
+  linear-gradient(
+    135deg,
+    #4B3116,
+    #2D1D0E
+  );
+
+  border-radius:40px;
+
+  padding:80px;
+
+  position:relative;
+
+  overflow:hidden;
+
+  box-shadow:
+  0 30px 80px rgba(40,20,5,0.20);
+}
+
+.cta::before{
+
+  content:'';
+
+  position:absolute;
+
+  width:420px;
+  height:420px;
+
+  border-radius:50%;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(255,215,120,0.08),
+    transparent 70%
+  );
+
+  top:-180px;
+  right:-120px;
+}
+
+.cta-label{
+
+  font-size:12px;
+
+  letter-spacing:3px;
+
+  text-transform:uppercase;
+
+  color:#E8D2A8;
+
+  font-weight:800;
+}
+
+.cta-title{
+
+  margin-top:22px;
+
+  font-family:'Playfair Display',serif;
+
+  font-size:62px;
+
+  line-height:1.06;
+
+  color:#fff;
+
+  max-width:720px;
+}
+
+.cta-text{
+
+  margin-top:28px;
+
+  max-width:760px;
+
+  font-size:20px;
+
+  line-height:1.9;
+
+  color:rgba(255,255,255,0.72);
+}
+
+.cta-actions{
+
+  margin-top:42px;
+
+  display:flex;
+  gap:18px;
+
+  flex-wrap:wrap;
+}
+
+.dark-btn{
+
+  background:var(--gold-gradient);
+
+  color:#fff;
+
+  text-decoration:none;
+
+  padding:18px 32px;
+
+  border-radius:999px;
+
+  font-weight:700;
+
+  transition:0.3s ease;
+}
+
+.dark-btn:hover{
+
+  transform:
+  translateY(-3px)
+  scale(1.03);
+}
+
+/* SOCIAL */
+
+.socials{
+
+  margin-top:48px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  gap:24px;
+
+  flex-wrap:wrap;
+}
+
+.social{
+
+  width:80px;
+  height:80px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,0.82);
+
+  border:1px solid rgba(200,155,60,0.14);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  transition:0.35s ease;
+
+  box-shadow:
+  0 12px 28px rgba(60,40,10,0.06);
+}
+
+.social:hover{
+
+  transform:
+  translateY(-8px)
+  scale(1.08);
+
+  background:var(--gold-gradient);
+}
+
+.social svg{
+
+  width:30px;
+  height:30px;
+
+  fill:var(--text);
+
+  transition:0.35s ease;
+}
+
+.social:hover svg{
+  fill:#fff;
+}
+
+/* FOOTER */
+
+footer{
+
+  border-top:1px solid rgba(200,155,60,0.10);
+
+  background:rgba(255,255,255,0.55);
+
+  backdrop-filter:blur(12px);
+}
+
+.footer-inner{
+
+  width:100%;
+  max-width:1240px;
+
+  margin:auto;
+
+  padding:40px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  flex-wrap:wrap;
+
+  gap:20px;
+}
+
+.footer-brand{
+
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.footer-logo{
+
+  width:46px;
+}
+
+.footer-text{
+
+  color:#7B6A58;
+
+  line-height:1.7;
+}
+
+.footer-links{
+
+  display:flex;
+  gap:24px;
+
+  flex-wrap:wrap;
+}
+
+.footer-links a{
+
+  text-decoration:none;
+
+  color:#8A755D;
+
+  font-size:13px;
+
+  text-transform:uppercase;
+
+  letter-spacing:1px;
+
+  font-weight:700;
+}
+
+/* MOBILE */
+
+@media(max-width:1100px){
+
+  .hero{
+    grid-template-columns:1fr;
   }
 
-  :root{
+  .hero-visual{
 
-    /* Luxury Gold Theme */
-
-    --brand-gold:#C89B3C;
-    --brand-gold-dark:#8B5E1A;
-    --brand-gold-light:#E8D2A8;
-
-    --brand-bg:#F7F1E3;
-    --brand-bg-soft:#FBF7EF;
-
-    --brand-dark:#3E2C1C;
-    --brand-text:#5B4632;
-
-    --brand-accent:#A8782A;
-
-    --white:#ffffff;
-
-    --gray:#7B6A58;
-
-    --border:#E5D6BC;
-
-    --shadow:
-      0 12px 32px rgba(90,60,20,0.10);
-
-    --gold-gradient:
-      linear-gradient(
-        135deg,
-        #F7E7BE 0%,
-        #D6B36A 35%,
-        #B8862F 65%,
-        #F2DEB0 100%
-      );
-  }
-
-  body{
-    font-family:'Inter',sans-serif;
-
-    background:
-    linear-gradient(
-      180deg,
-      #FBF7EF 0%,
-      #F7F1E3 100%
-    );
-
-    color:var(--brand-dark);
-    overflow-x:hidden;
-    line-height:1.5;
-  }
-
-  .container{
-    width:100%;
-    max-width:1280px;
-    margin:auto;
-    padding:60px 24px;
-  }
-
-  .grid{
-    display:grid;
-    grid-template-columns:1fr 420px;
-    gap:80px;
-    align-items:start;
-  }
-
-  @media(max-width:992px){
-    .grid{
-      grid-template-columns:1fr;
-    }
-  }
-
-  .brand{
-    font-family:'Playfair Display', serif;
-
-    background:var(--gold-gradient);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-
-    font-size:40px;
-    font-weight:700;
-    margin-bottom:40px;
-
-    animation:fadeUp 0.7s ease forwards;
-  }
-
-  .eyebrow{
-    font-size:12px;
-    letter-spacing:3px;
-    text-transform:uppercase;
-
-    color:var(--brand-gold-dark);
-
-    font-weight:800;
-    margin-bottom:20px;
-
-    animation:fadeUp 0.8s ease forwards;
-  }
-
-  .hero-title{
-    font-family:'Playfair Display', serif;
-    font-size:76px;
-    line-height:0.95;
-    font-weight:400;
-    max-width:850px;
-
-    color:var(--brand-dark);
-
-    animation:fadeUp 0.9s ease forwards;
-  }
-
-  @media(max-width:768px){
-    .hero-title{
-      font-size:48px;
-    }
-  }
-
-  .hero-text{
-    font-size:20px;
-
-    color:var(--brand-text);
-
-    max-width:700px;
-    margin-top:30px;
-    line-height:1.8;
-
-    animation:fadeUp 1s ease forwards;
-  }
-
-  .deals-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:24px;
-    margin-top:60px;
-  }
-
-  @media(max-width:768px){
-    .deals-grid{
-      grid-template-columns:1fr;
-    }
-  }
-
-  .deal-card{
-    background:rgba(255,255,255,0.78);
-
-    backdrop-filter:blur(8px);
-
-    border:1px solid rgba(200,155,60,0.18);
-
-    padding:28px;
-
-    position:relative;
-    overflow:hidden;
-
-    min-height:180px;
-
-    transition:0.35s ease;
-
-    animation:fadeUp 1s ease forwards;
-
-    border-radius:20px;
-  }
-
-  .deal-card:hover{
-    transform:translateY(-6px);
-    box-shadow:var(--shadow);
-  }
-
-  .deal-card::before{
-    content:'';
-
-    position:absolute;
-
-    left:0;
-    top:0;
-
-    width:5px;
-    height:100%;
-
-    background:var(--gold-gradient);
-
-    opacity:0.35;
-
-    transition:0.3s ease;
-  }
-
-  .deal-card:hover::before{
-    opacity:1;
-  }
-
-  .deal-tag{
-    font-size:11px;
-    text-transform:uppercase;
-    letter-spacing:2px;
-
-    color:var(--brand-gold-dark);
-
-    font-weight:800;
-    margin-bottom:18px;
-    display:block;
-  }
-
-  .deal-title{
-    font-size:22px;
-    font-weight:600;
-    line-height:1.5;
-
-    color:var(--brand-dark);
-  }
-
-  /* Sidebar */
-
-  .sidebar{
-
-    background:
-    linear-gradient(
-      180deg,
-      #5A3A16 0%,
-      #3E2A16 100%
-    );
-
-    color:#fff;
-
-    padding:50px 40px;
-
-    border-radius:32px;
-
-    position:sticky;
-    top:30px;
-
-    overflow:hidden;
-
-    box-shadow:
-      0 20px 60px rgba(90,60,20,0.25);
-
-    animation:fadeUp 1.1s ease forwards;
-  }
-
-  @media(max-width:992px){
-    .sidebar{
-      position:relative;
-      top:0;
-    }
-  }
-
-  .sidebar::before{
-    content:'';
-
-    position:absolute;
-    top:-60px;
-    right:-60px;
-
-    width:220px;
-    height:220px;
-
-    background:rgba(255,215,140,0.05);
-
-    border-radius:50%;
-  }
-
-  .sidebar-eyebrow{
-    font-size:12px;
-    letter-spacing:3px;
-    text-transform:uppercase;
-
-    color:#F0D9A7;
-
-    font-weight:800;
-    margin-bottom:18px;
-  }
-
-  .sidebar-title{
-    font-family:'Playfair Display', serif;
-
-    font-size:44px;
-    line-height:1.15;
-
-    margin-bottom:24px;
-
-    font-style:italic;
-  }
-
-  .sidebar-text{
-    color:rgba(255,255,255,0.72);
-
-    line-height:1.8;
-
-    margin-bottom:40px;
-  }
-
-  .btn{
-    width:100%;
-
-    border:none;
-
-    padding:18px 24px;
-
-    border-radius:999px;
-
-    color:#fff;
-
-    font-size:17px;
-    font-weight:700;
-
-    cursor:pointer;
-
-    transition:0.3s ease;
-
-    margin-bottom:18px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
-
-    text-decoration:none;
-  }
-
-  .btn:hover{
-    transform:translateY(-2px) scale(1.02);
-  }
-
-  .btn-whatsapp{
-
-    background:
-    linear-gradient(
-      135deg,
-      #D6B36A,
-      #B8862F
-    );
-
-    color:#fff;
-  }
-
-  .btn-whatsapp:hover{
-
-    background:
-    linear-gradient(
-      135deg,
-      #E7C989,
-      #C4923E
-    );
-  }
-
-  .btn-facebook{
-
-    background:
-    linear-gradient(
-      135deg,
-      #7A5520,
-      #C89B3C
-    );
-  }
-
-  .btn-facebook:hover{
-
-    background:
-    linear-gradient(
-      135deg,
-      #8B6328,
-      #D6B36A
-    );
-  }
-
-  .status-box{
-    margin-top:40px;
-
-    border:1px dashed rgba(255,255,255,0.18);
-
-    padding:24px;
-
-    border-radius:22px;
-
-    background:rgba(255,215,160,0.06);
-  }
-
-  .status-title{
-    font-size:15px;
-    margin-bottom:12px;
-    font-weight:700;
-  }
-
-  .status-text{
-    color:rgba(255,255,255,0.72);
-
-    font-size:14px;
-    line-height:1.7;
-  }
-
-  /* Social Connect Section */
-
-  .social-connect{
-    padding:10px 24px 50px;
-  }
-
-  .social-connect-inner{
-    max-width:1280px;
-
-    margin:auto;
+    min-height:auto;
 
     display:flex;
     flex-direction:column;
 
-    align-items:center;
-    justify-content:center;
-
-    gap:24px;
-  }
-
-  .social-title{
-    font-size:14px;
-    text-transform:uppercase;
-    letter-spacing:3px;
-
-    font-weight:800;
-
-    color:var(--brand-gold-dark);
-  }
-
-  .social-icons{
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
     gap:28px;
-
-    flex-wrap:wrap;
   }
 
-  .social-icons a{
-    width:58px;
-    height:58px;
+  .card{
 
-    border-radius:50%;
+    position:relative;
 
-    background:#fff;
+    width:100% !important;
 
-    border:1px solid rgba(200,155,60,0.18);
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    transition:0.3s ease;
-
-    box-shadow:
-      0 4px 18px rgba(0,0,0,0.05);
+    top:auto;
+    left:auto;
+    right:auto;
+    bottom:auto;
   }
 
-  .social-icons a:hover{
-    transform:translateY(-4px) scale(1.08);
+  .grid{
+    grid-template-columns:1fr;
+  }
+}
 
-    box-shadow:var(--shadow);
+@media(max-width:768px){
+
+  .navbar{
+    padding:20px;
   }
 
-  .social-icons svg{
-    width:26px;
-    height:26px;
-
-    fill:var(--brand-dark);
-
-    transition:0.3s ease;
+  .nav-links{
+    display:none;
   }
 
-  .social-icons a:hover svg{
-    fill:var(--brand-gold-dark);
+  .hero{
+    padding:70px 24px 90px;
   }
 
-  footer{
-    background:#FCF8F1;
-
-    border-top:1px solid var(--border);
-
-    margin-top:20px;
+  .section{
+    padding:0 24px 90px;
   }
 
-  .footer-inner{
-    max-width:1280px;
-
-    margin:auto;
-
-    padding:30px 24px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    gap:20px;
-
-    flex-wrap:wrap;
+  .hero-title{
+    font-size:54px;
   }
 
-  .footer-left{
-    color:#8A735B;
-    font-size:14px;
+  .section-title{
+    font-size:42px;
   }
 
-  .footer-links{
-    display:flex;
-    gap:30px;
-    flex-wrap:wrap;
+  .cta-title{
+    font-size:44px;
   }
 
-  .footer-links a{
-    text-decoration:none;
-
-    color:#9B866B;
-
-    font-size:12px;
-    font-weight:700;
-
-    text-transform:uppercase;
-    letter-spacing:2px;
-
-    transition:0.3s ease;
+  .section-box{
+    padding:44px 28px;
   }
 
-  .footer-links a:hover{
-    color:var(--brand-gold-dark);
+  .cta{
+    padding:50px 32px;
   }
+}
 
-  @keyframes fadeUp{
-    from{
-      opacity:0;
-      transform:translateY(30px);
-    }
-
-    to{
-      opacity:1;
-      transform:translateY(0);
-    }
-  }
 </style>
+
 </head>
 
 <body>
 
-  <main class="container">
-    <div class="grid">
+<!-- NAVBAR -->
 
-      <!-- Left Content -->
-      <section>
+<nav class="navbar">
 
-        <div class="brand">DealReach.in</div>
+  <div class="logo-wrap">
 
-        <div class="eyebrow">
-          Curated Shopping Savings
-        </div>
+    <!-- Replace logo.png with your uploaded logo -->
+    <img
+      src="logo.png"
+      alt="DealReach India"
+      class="logo"
+    >
 
-        <h1 class="hero-title">
-          India's Smartest Deals Marketplace.
-        </h1>
+    <div class="brand">
 
-        <p class="hero-text">
-          Helping you discover verified discounts, lightning offers,
-          and massive savings from trusted retailers across the nation.
-          All in one place.
-        </p>
+      <div class="brand-name">
+        DealReach India
+      </div>
 
-        <!-- Deal Cards -->
-        <div class="deals-grid">
-
-          <div class="deal-card">
-            <span class="deal-tag">Electronics</span>
-            <div class="deal-title">
-              iPhone 15 Series: Lowest Ever Prices at Major Retailers
-            </div>
-          </div>
-
-          <div class="deal-card">
-            <span class="deal-tag">Fashion</span>
-            <div class="deal-title">
-              Myntra End of Reason: Flat 60% Off Top Brands
-            </div>
-          </div>
-
-          <div class="deal-card">
-            <span class="deal-tag">Home & Kitchen</span>
-            <div class="deal-title">
-              Prestige & Pigeon: Up to 45% Off + Extra Bank Offer
-            </div>
-          </div>
-
-          <div class="deal-card">
-            <span class="deal-tag">Beauty</span>
-            <div class="deal-title">
-              Nykaa Pink Summer: Buy 2 Get 1 Free on Luxe Collection
-            </div>
-          </div>
-
-        </div>
-
-      </section>
-
-      <!-- Sidebar -->
-      <aside class="sidebar">
-
-        <div class="sidebar-eyebrow">
-          Stay Connected
-        </div>
-
-        <h2 class="sidebar-title">
-          Don't Miss the Next Big Drop.
-        </h2>
-
-        <p class="sidebar-text">
-          Join our community of shoppers and get real-time price alerts directly on your favorite platforms.
-        </p>
-
-        <a
-          class="btn btn-whatsapp"
-          href="https://whatsapp.com/channel/0029VbCNFrb1dAw6qgFIqF23"
-          target="_blank"
-        >
-          WhatsApp Channel
-        </a>
-
-        <a
-          class="btn btn-facebook"
-          href="https://www.facebook.com/DealReachIndia/"
-          target="_blank"
-        >
-          Follow on Facebook
-        </a>
-
-        <div class="status-box">
-
-          <div class="status-title">
-            Join Our FREE Inner Circle Community
-          </div>
-
-          <div class="status-text">
-  Join the inner circle for 
-  <a 
-    href="https://chat.whatsapp.com/DqZszXx2K0OLl2kNF3q9YB" 
-    target="_blank"
-    style="
-      color:#A8DADC;
-      font-weight:700;
-      text-decoration:none;
-      border-bottom:1px dashed rgba(168,218,220,0.5);
-    "
-  >
-    early-access links, exclusive coupons, and hidden flash deals
-  </a>.
-</div>
-
-        </div>
-
-      </aside>
+      <div class="brand-tag">
+        Good Taste. Smart Promotion.
+      </div>
 
     </div>
-  </main>
 
-<!-- Social Connect -->
-<section class="social-connect">
+  </div>
 
-  <div class="social-connect-inner">
+  <div class="nav-links">
 
-    <div class="social-title">
-      Connect with DealReach India
+    <a href="#about">About</a>
+    <a href="#approach">Approach</a>
+    <a href="#connect">Connect</a>
+
+    <a
+      href="mailto:hello@dealreach.in"
+      class="nav-btn"
+    >
+      Contact
+    </a>
+
+  </div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div>
+
+    <div class="hero-eyebrow">
+      Thoughtful Product Discovery & Promotion
     </div>
 
-    <div class="social-icons">
+    <h1 class="hero-title">
+      Helping Good Products
+      <span>Get Noticed.</span>
+    </h1>
 
-      <!-- Instagram -->
+    <p class="hero-text">
+
+      DealReach India is a simple platform built around
+      product discovery, good taste, and thoughtful promotion.
+
+      We share products, brands, and ideas we genuinely find interesting —
+      in a calm, honest, and audience-friendly way.
+
+    </p>
+
+    <div class="hero-actions">
+
+      <a
+        href="mailto:hello@dealreach.in"
+        class="btn-primary"
+      >
+        Connect With Us
+      </a>
+
       <a
         href="https://www.instagram.com/dealreachindia/"
         target="_blank"
-        aria-label="Instagram"
+        class="btn-secondary"
+      >
+        Visit Instagram
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- HERO VISUAL -->
+
+  <div class="hero-visual">
+
+    <div class="card card-1">
+
+      <div class="card-label">
+        Simple & Honest
+      </div>
+
+      <div class="card-title">
+
+        We believe promotion works best when it feels natural,
+        useful, and trustworthy.
+
+      </div>
+
+    </div>
+
+    <div class="card card-2">
+
+      <div class="card-label">
+        Good Taste Matters
+      </div>
+
+      <div class="card-title">
+
+        We focus on products,
+        ideas,
+        and brands that genuinely stand out.
+
+      </div>
+
+    </div>
+
+    <div class="card card-3">
+
+      <div class="card-label">
+        Human-First
+      </div>
+
+      <div class="card-title">
+
+        No loud marketing.
+        No unnecessary hype.
+        Just thoughtful communication.
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section
+  class="section"
+  id="about"
+>
+
+  <div class="section-box">
+
+    <div class="section-label">
+      About DealReach India
+    </div>
+
+    <div class="section-title">
+
+      Built Around Trust,
+      Taste, and Simplicity.
+
+    </div>
+
+    <div class="section-text">
+
+      DealReach India was created with a simple idea:
+
+      good products deserve thoughtful promotion.
+
+      We are interested in clean presentation,
+      audience trust,
+      and sharing things people may genuinely enjoy,
+      find useful,
+      or discover for the first time.
+
+      The goal is not aggressive selling —
+      but meaningful attention.
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- APPROACH -->
+
+<section
+  class="section"
+  id="approach"
+>
+
+  <div class="section-box">
+
+    <div class="section-label">
+      Our Approach
+    </div>
+
+    <div class="section-title">
+
+      Calm.
+      Thoughtful.
+      Clear.
+
+    </div>
+
+    <div class="grid">
+
+      <div class="grid-box">
+
+        <div class="grid-number">
+          01
+        </div>
+
+        <div class="grid-text">
+
+          We explore products,
+          brands,
+          and ideas that genuinely feel interesting,
+          useful,
+          or visually appealing.
+
+        </div>
+
+      </div>
+
+      <div class="grid-box">
+
+        <div class="grid-number">
+          02
+        </div>
+
+        <div class="grid-text">
+
+          We focus on simple,
+          clean,
+          and audience-friendly communication
+          instead of loud marketing tactics.
+
+        </div>
+
+      </div>
+
+      <div class="grid-box">
+
+        <div class="grid-number">
+          03
+        </div>
+
+        <div class="grid-text">
+
+          We believe long-term trust matters more
+          than short-term hype.
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="section">
+
+  <div class="cta">
+
+    <div class="cta-label">
+      Connect With DealReach India
+    </div>
+
+    <div class="cta-title">
+
+      Thoughtful Promotion
+      Starts With Good Communication.
+
+    </div>
+
+    <div class="cta-text">
+
+      If you have a product,
+      brand,
+      or idea that feels genuinely interesting,
+      feel free to reach out.
+
+      We enjoy discovering and sharing things
+      that deserve more attention.
+
+    </div>
+
+    <div class="cta-actions">
+
+      <a
+        href="mailto:hello@dealreach.in"
+        class="dark-btn"
+      >
+        hello@dealreach.in
+      </a>
+
+      <a
+        href="https://www.instagram.com/dealreachindia/"
+        target="_blank"
+        class="dark-btn"
+      >
+        Instagram
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONNECT -->
+
+<section
+  class="section"
+  id="connect"
+>
+
+  <div
+    class="section-box"
+    style="text-align:center;"
+  >
+
+    <div class="section-label">
+      Connect With Us
+    </div>
+
+    <div class="section-title">
+
+      Find DealReach India Online.
+
+    </div>
+
+    <div
+      class="section-text"
+      style="margin-left:auto;margin-right:auto;"
+    >
+
+      Follow along for product discoveries,
+      thoughtful recommendations,
+      and future collaborations.
+
+    </div>
+
+    <div class="socials">
+
+      <!-- Instagram -->
+
+      <a
+        href="https://www.instagram.com/dealreachindia/"
+        target="_blank"
+        class="social"
       >
         <svg viewBox="0 0 24 24">
           <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm0 2h10c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3zm11.5 1a1.5 1.5 0 100 3 1.5 1.5 0 000-3zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z"/>
@@ -695,10 +1232,11 @@
       </a>
 
       <!-- Facebook -->
+
       <a
         href="https://www.facebook.com/DealReachIndia/"
         target="_blank"
-        aria-label="Facebook"
+        class="social"
       >
         <svg viewBox="0 0 24 24">
           <path d="M13 22v-8h3l1-4h-4V8c0-1.2.3-2 2-2h2V2.3C16.6 2.1 15.5 2 14.3 2 11.6 2 10 3.7 10 6.7V10H7v4h3v8h3z"/>
@@ -706,10 +1244,11 @@
       </a>
 
       <!-- YouTube -->
+
       <a
         href="https://www.youtube.com/@DealReachin"
         target="_blank"
-        aria-label="YouTube"
+        class="social"
       >
         <svg viewBox="0 0 24 24">
           <path d="M23.5 6.2s-.2-1.7-.9-2.4c-.9-.9-1.9-.9-2.4-1C16.8 2.5 12 2.5 12 2.5h0s-4.8 0-8.2.3c-.5.1-1.5.1-2.4 1C.7 4.5.5 6.2.5 6.2S0 8.1 0 10v2c0 1.9.5 3.8.5 3.8s.2 1.7.9 2.4c.9.9 2 .9 2.5 1 1.8.2 7.6.3 7.6.3s4.8 0 8.2-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.4.9-2.4S24 13.9 24 12v-2c0-1.9-.5-3.8-.5-3.8zM9.5 15.5v-7l6.5 3.5-6.5 3.5z"/>
@@ -717,10 +1256,11 @@
       </a>
 
       <!-- Pinterest -->
+
       <a
         href="https://www.pinterest.com/dealreachindia/"
         target="_blank"
-        aria-label="Pinterest"
+        class="social"
       >
         <svg viewBox="0 0 24 24">
           <path d="M12 2C6.5 2 3 5.6 3 10.2c0 2.8 1.5 5.3 3.8 6.2.1-.5.2-1.3.1-1.8-.1-.5-.7-2.9-.7-2.9s-.2-.5-.2-1.1c0-1 .6-1.8 1.4-1.8.7 0 1 .5 1 1.2 0 .8-.5 1.9-.7 2.9-.2.8.4 1.5 1.2 1.5 1.4 0 2.5-1.5 2.5-3.6 0-1.9-1.4-3.2-3.4-3.2-2.3 0-3.7 1.7-3.7 3.5 0 .7.3 1.5.7 1.9.1.1.1.2.1.4-.1.4-.2 1.1-.3 1.2-.1.2-.2.3-.5.2-1.4-.6-2.3-2.4-2.3-4 0-3.2 2.4-6.2 6.9-6.2 3.6 0 6.4 2.6 6.4 6 0 3.6-2.2 6.5-5.3 6.5-1 0-2-.5-2.3-1.1l-.6 2.3c-.2.8-.7 1.8-1.1 2.4.8.2 1.6.4 2.5.4 5.5 0 9-3.6 9-8.2C21 5.6 17.5 2 12 2z"/>
@@ -733,28 +1273,39 @@
 
 </section>
 
-  <!-- Footer -->
-  <footer>
+<!-- FOOTER -->
 
-    <div class="footer-inner">
+<footer>
 
-      <div class="footer-left">
-        © <span id="year"></span> DealReach India. All Rights Reserved.
-      </div>
+  <div class="footer-inner">
 
-      <div class="footer-links">
-        <a href="https://dealreach.in/privacy-policy.html">Privacy Policy</a>
-        <a href="https://dealreach.in/terms.html">Terms of Service</a>
-        <a href="https://dealreach.in/partner-with-us.html">Partner with Us</a>
+    <div class="footer-brand">
+
+      <img
+        src="logo.png"
+        class="footer-logo"
+      >
+
+      <div class="footer-text">
+
+        © 2026 DealReach India<br>
+        Thoughtful product discovery & promotion.
+
       </div>
 
     </div>
 
-  </footer>
+    <div class="footer-links">
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+      <a href="#">Contact</a>
+
+    </div>
+
+  </div>
+
+</footer>
 
 </body>
 </html>
